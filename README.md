@@ -26,3 +26,7 @@ Everything below is planned to be implemented or is planned to be heavily improv
 - Better visual feedback for guessing correctly/incorrectly
 - More stats for the individual game after making a guess (every champions' damage that game)
 - Showing chosen runes and summoner spells before guessing
+
+## Credits
+
+Lost in Draft was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.
