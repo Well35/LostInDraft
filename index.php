@@ -25,7 +25,7 @@ function get_random_game_id($conn) {
 function get_game_data($id, $conn) {
     $blue_side = new Team();
     $red_side = new Team();
-    $id = 1;
+    #$id = 1;
 
     $sql = "SELECT champion_name, blue_side, red_side, side_picked 
             FROM champion_picks 
@@ -63,7 +63,10 @@ $conn = connect_to_db();
 $random_game_id = get_random_game_id($conn);
 $current_game = get_game_data($random_game_id, $conn);
 
-$conn->close();
+if (isset($_Get['button'])) {
+    $random_game_id = get_random_game_id($conn);
+    $current_game = get_game_data($random_game_id, $conn);
+}
 ?>
 
 <!DOCTYPE html>
@@ -100,8 +103,8 @@ $conn->close();
                 echo '<img src="ChampionIcons/' . htmlspecialchars($champion) . '.png" alt=' . htmlspecialchars($champion) . '>';
             }
             ?>
-            <form method="post">
-                <input type="submit" name="Blue side" value="Blue side win">
+            <form method="get">
+                <input type="submit" name="button" value="Blue side win">
             </form>
         </div>
         <div id="champIcons">
@@ -111,8 +114,8 @@ $conn->close();
                 echo '<img src="ChampionIcons/' . htmlspecialchars($champion) . '.png" alt=' . htmlspecialchars($champion) . '>';
             }
             ?>
-            <form method="post">
-                <input type="submit" name="Red side" value="Red side win">
+            <form method="get">
+                <input type="submit" name="button" value="Red side win">
             </form>
         </div>
     </div>
