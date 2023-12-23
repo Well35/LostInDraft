@@ -1,6 +1,7 @@
 <?php
 include "Game.php";
 include "Team.php";
+
 class DBConnector {
     private $conn;
     public $game;
@@ -28,6 +29,7 @@ class DBConnector {
         return rand(1, $result->num_rows);
     }
 
+    // Queries database for random game based on given $id
     public function get_game_data($id) {
         $blue_side = new Team();
         $red_side = new Team();

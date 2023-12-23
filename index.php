@@ -48,7 +48,7 @@ if (isset($_GET['red_side'])) {
             ?>
 
             <form method="get">
-                <input type="submit" name="blue_side" value="Red side win">
+                <input type="submit" name="blue_side" value="Blue side win">
             </form> 
         </div>
 
