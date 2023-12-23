@@ -11,6 +11,7 @@ if (isset($_GET['blue_side'])) {
     else {
         $background_color = "#590e02";
     }
+    $connector->find_new_game();
 }
 
 if (isset($_GET['red_side'])) {
@@ -20,6 +21,7 @@ if (isset($_GET['red_side'])) {
     else {
         $background_color = "#590e02";
     }
+    $connector->find_new_game();
 }
 ?>
 
@@ -43,7 +45,7 @@ if (isset($_GET['red_side'])) {
             }
             ?>
             <form method="get">
-                <input type="submit" name="blue_side" value="Blue side win">
+                <input type="submit" name="blue_side" value="Red side win">
             </form>
         </div>
 
@@ -61,6 +63,22 @@ if (isset($_GET['red_side'])) {
             </form>
         </div>
         
+    </div>
+
+    <div id="settings">
+        Regions:
+        <br>
+        <input type="checkbox" name="LCK">
+        <label for="LCK">LCK</label>
+        <input type="checkbox" name="LCS">
+        <label for="LCS">LCS</label>
+        <input type="checkbox" name="LEC">
+        <label for="LEC">LEC</label>
+        <input type="checkbox" name="LPL">
+        <label for="LPL">LPL</label>
+        <br>
+        <input type="checkbox" name="LJL">
+        <label for="LJL">LJL</label>
     </div>
 
 </body>
