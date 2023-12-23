@@ -1,13 +1,13 @@
 <?php
 class Team {
     public $champions = array();
-    public $name;
+    private $name;
 
     function __construct($name = null) {
         $this->name = $name;
     }
 
-    function add_champ($name) {
+    public function add_champ($name) {
         $this->champions[] = $name;
     }
 
