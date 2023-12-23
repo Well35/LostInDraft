@@ -31,6 +31,7 @@ if (isset($_GET['red_side'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <title>Lost In Draft</title>
 </head>
 <body bgColor= <?php echo $background_color ?>>
@@ -72,14 +73,10 @@ if (isset($_GET['red_side'])) {
         <label for="LCK">LCK</label>
         <input type="checkbox" name="LCS">
         <label for="LCS">LCS</label>
-        <input type="checkbox" name="LEC">
-        <label for="LEC">LEC</label>
         <input type="checkbox" name="LPL">
         <label for="LPL">LPL</label>
-        <br>
-        <input type="checkbox" name="LJL">
-        <label for="LJL">LJL</label>
     </div>
+    <script src="check_box.js"></script>
 
 </body>
 </html>
