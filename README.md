@@ -23,3 +23,6 @@ Everything below is planned to be implemented or is planned to be heavily improv
 - Check boxes that limit which regions are queried for
 - Much better frontend to make the website look better overall
 - Support for all official lolesports regions
+- Better visual feedback for guessing correctly/incorrectly
+- More stats for the individual game after making a guess (every champions' damage that game)
+- Showing chosen runes and summoner spells before guessing
