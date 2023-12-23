@@ -63,9 +63,24 @@ $conn = connect_to_db();
 $random_game_id = get_random_game_id($conn);
 $current_game = get_game_data($random_game_id, $conn);
 
-if (isset($_Get['button'])) {
-    $random_game_id = get_random_game_id($conn);
-    $current_game = get_game_data($random_game_id, $conn);
+$background_color = "#6B6B6B";
+
+if (isset($_GET['blue_side'])) {
+    if ($current_game->winner == "BLUE") {
+        $background_color = "#065c22";
+    }
+    else {
+        $background_color = "#850108";
+    }
+}
+
+if (isset($_GET['red_side'])) {
+    if ($current_game->winner == "BLUE") {
+        $background_color = "#065c22";
+    }
+    else {
+        $background_color = "#850108";
+    }
 }
 ?>
 
@@ -94,7 +109,7 @@ if (isset($_Get['button'])) {
         padding-top: 50px;
     }
 </style>
-<body bgColor="#6B6B6B">
+<body bgColor= <?php echo $background_color ?>>
     <div id="wrapper">
         <div id="champIcons">
             <?php
@@ -104,7 +119,7 @@ if (isset($_Get['button'])) {
             }
             ?>
             <form method="get">
-                <input type="submit" name="button" value="Blue side win">
+                <input type="submit" name="blue_side" value="Blue side win">
             </form>
         </div>
         <div id="champIcons">
@@ -115,7 +130,7 @@ if (isset($_Get['button'])) {
             }
             ?>
             <form method="get">
-                <input type="submit" name="button" value="Red side win">
+                <input type="submit" name="red_side" value="Red side win">
             </form>
         </div>
     </div>
