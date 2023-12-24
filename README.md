@@ -7,7 +7,7 @@ A website that challenges users to guess the outcome of league of legends pro ga
 ## How it Works
 
 1. Lost in Draft queries the database for a random game
-2. Creates a Game() object out of the queried game
+2. Creates a Game object out of the queried game
 3. Displays the data to the user (champion icons, team names, etc.)
 
 At this point, the user will either guess the blue side or the red side to win. Guessing correctly changes the background color to green, while 
