@@ -73,6 +73,7 @@ class DBConnector {
     }
 
     // Displays all champion icon images for a given team
+    // Pulls pictures from the ChampionIcons folder
     public function draw_champion_icons(Team $side_to_draw) {
         echo '<h1>' . htmlspecialchars($side_to_draw->get_name()) . '</h1>';
         foreach($side_to_draw->champions as $champion) {

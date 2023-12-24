@@ -1,4 +1,8 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/');
+$dotenv->load();
 
 include "DBConnector.php";
 $connector = new DBConnector();
@@ -9,7 +13,7 @@ $background_color = "#6B6B6B";
 // TODO: Find a better way to visualize guessing correctly/incorrectly
 //  Just changing background color looks ugly
 //
-// All of this logic should be moved somewhere else at some point
+// Also, all of this logic should be moved somewhere else at some point
 // Most likely instead of form submitting, it should be moved to JS
 if (isset($_GET['blue_side'])) {
     if ($connector->game->get_winner() == "BLUE") {
