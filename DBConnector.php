@@ -23,6 +23,9 @@ class DBConnector {
         }
     }
 
+    // Gets a random game_id between 1 and the amount in the database
+    // In the future the random numbers generated will depend on what types of games the user wants to search for
+    // (ie. only grabbing LCS and LPL games)
     public function get_random_game_id() {
         $sql = "SELECT * FROM games";
         $result = $this->conn->query($sql);
@@ -67,5 +70,13 @@ class DBConnector {
 
     public function find_new_game() {
         $this->get_game_data($this->get_random_game_id());
+    }
+
+    // Displays all champion icon images for a given team
+    public function draw_champion_icons(Team $side_to_draw) {
+        echo '<h1>' . htmlspecialchars($side_to_draw->get_name()) . '</h1>';
+        foreach($side_to_draw->champions as $champion) {
+            echo '<img src="ChampionIcons/' . htmlspecialchars($champion) . '.png" alt=' . htmlspecialchars($champion) . '>';
+        }
     }
 }

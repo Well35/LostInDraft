@@ -1,6 +1,6 @@
 <?php
 class Team {
-    public $champions = array();
+    public $champions = array(); //Champions will be converted to its own class later to hold more data
     private $name;
 
     function __construct($name = null) {

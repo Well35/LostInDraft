@@ -1,10 +1,16 @@
 <?php
+
 include "DBConnector.php";
 $connector = new DBConnector();
 
 $background_color = "#6B6B6B";
 
 // Quick logic that changes background color based on the user's guess
+// TODO: Find a better way to visualize guessing correctly/incorrectly
+//  Just changing background color looks ugly
+//
+// All of this logic should be moved somewhere else at some point
+// Most likely instead of form submitting, it should be moved to JS
 if (isset($_GET['blue_side'])) {
     if ($connector->game->get_winner() == "BLUE") {
         $background_color = "#065c22";
@@ -32,7 +38,7 @@ if (isset($_GET['red_side'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-    <title>Lost In Draft</title>
+    <title>Lost in Draft</title>
 </head>
 <body bgColor= <?php echo $background_color ?>>
 
@@ -40,11 +46,7 @@ if (isset($_GET['red_side'])) {
 
         <div id="champIcons">
             <?php
-            // Displays all blue side champion icons
-            echo '<h1>' . htmlspecialchars($connector->game->get_blue_side()->get_name()) . '</h1>';
-            foreach($connector->game->get_blue_side()->champions as $champion) {
-                echo '<img src="ChampionIcons/' . htmlspecialchars($champion) . '.png" alt=' . htmlspecialchars($champion) . '>';
-            }
+                $connector->draw_champion_icons($connector->game->get_blue_side());
             ?>
 
             <form method="get">
@@ -56,11 +58,7 @@ if (isset($_GET['red_side'])) {
 
         <div id="champIcons">
             <?php
-            // Displays all red side champion icons
-            echo '<h1>' . htmlspecialchars($connector->game->get_red_side()->get_name()) . '</h1>';
-            foreach($connector->game->get_red_side()->champions as $champion) {
-                echo '<img src="ChampionIcons/' . htmlspecialchars($champion) . '.png" alt=' . htmlspecialchars($champion) . '>';
-            }
+                $connector->draw_champion_icons($connector->game->get_red_side());
             ?>
 
             <form method="get">
