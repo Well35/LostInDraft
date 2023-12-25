@@ -11,10 +11,10 @@ class DBConnector {
         $this->get_game_data($this->get_random_game_id());
     }
     public function connect_to_db() {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "test";
+        $servername = $_SERVER["SERVER_NAME"];
+        $username = $_SERVER["USER_NAME"];
+        $password = $_SERVER["PASSWORD"];
+        $database = $_SERVER["DATABASE"];
 
         $this->conn = new mysqli($servername, $username, $password, $database);
 
