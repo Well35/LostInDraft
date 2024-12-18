@@ -2,7 +2,7 @@
 
 A website that challenges users to guess the outcome of league of legends pro games based on draft alone.
 
-<img height= "400" src="web_example.png">
+
 
 ## How it Works
 
